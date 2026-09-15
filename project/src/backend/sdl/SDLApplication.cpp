@@ -53,7 +53,7 @@ namespace lime {
 		JoystickEvent joystickEvent;
 		KeyEvent keyEvent;
 		MouseEvent mouseEvent;
-		OrientationEvent orientationEvent;
+		// OrientationEvent orientationEvent;
 		RenderEvent renderEvent;
 		SensorEvent sensorEvent;
 		TextEvent textEvent;
@@ -188,7 +188,7 @@ namespace lime {
 				ProcessGamepadEvent (event);
 				break;
 
-			case SDL_DISPLAYEVENT:
+			/* case SDL_DISPLAYEVENT:
 
 				switch (event->display.event) {
 
@@ -205,7 +205,7 @@ namespace lime {
 						break;
 
 				}
-				break;
+				break; */
 
 			case SDL_DROPFILE:
 
