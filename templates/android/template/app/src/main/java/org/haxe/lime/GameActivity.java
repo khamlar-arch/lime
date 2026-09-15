@@ -22,7 +22,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
-import android.view.OrientationEventListener;
+// import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowManager;
@@ -51,13 +51,13 @@ public class GameActivity extends SDLActivity {
 	private static DisplayMetrics metrics;
 	private static DisplayCutout displayCutout;
 	private static Vibrator vibrator;
-	private static OrientationEventListener orientationListener;
-	private static HaxeObject deviceOrientationListener;
-	private static int deviceOrientation = SDL_ORIENTATION_UNKNOWN;
+	// private static OrientationEventListener orientationListener;
+	// private static HaxeObject deviceOrientationListener;
+	// private static int deviceOrientation = SDL_ORIENTATION_UNKNOWN;
 
 	public Handler handler;
 
-	public static void setDeviceOrientationListener (HaxeObject object) {
+	/*public static void setDeviceOrientationListener (HaxeObject object) {
 
 		deviceOrientationListener = object;
 		if (deviceOrientationListener != null)
@@ -65,7 +65,7 @@ public class GameActivity extends SDLActivity {
 			deviceOrientationListener.call1("onOrientationChanged", deviceOrientation);
 		}
 
-	}
+	}*/
 
 	public static double getDisplayXDPI () {
 
@@ -195,7 +195,7 @@ public class GameActivity extends SDLActivity {
 
 		super.onCreate (state);
 
-		orientationListener = new OrientationEventListener(this) {
+		/*orientationListener = new OrientationEventListener(this) {
 
 			public void onOrientationChanged(int degrees) {
 
@@ -227,7 +227,7 @@ public class GameActivity extends SDLActivity {
 
 			}
 
-		};
+		};*/
 
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
@@ -374,7 +374,7 @@ public class GameActivity extends SDLActivity {
 
 		}
 
-		orientationListener.disable();
+		// orientationListener.disable();
 
 		super.onPause ();
 
@@ -423,7 +423,7 @@ public class GameActivity extends SDLActivity {
 
 		super.onResume ();
 
-		orientationListener.enable();
+		// orientationListener.enable();
 
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
