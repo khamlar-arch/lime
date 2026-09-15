@@ -2,7 +2,7 @@ package lime.app;
 
 import lime.graphics.RenderContext;
 import lime.system.System;
-import lime.system.Orientation;
+// import lime.system.Orientation;
 import lime.ui.Gamepad;
 import lime.ui.GamepadAxis;
 import lime.ui.GamepadButton;
@@ -38,7 +38,7 @@ class Application extends Module
 	/**
 		The device's orientation.
 	**/
-	public var deviceOrientation(get, never):Orientation;
+	// public var deviceOrientation(get, never):Orientation;
 
 	/**
 		Meta-data values for the application, such as a version or a package name
@@ -63,7 +63,7 @@ class Application extends Module
 	/**
 		Dispatched when the orientation of the display has changed.
 	**/
-	public var onDisplayOrientationChange = new Event<Int->Orientation->Void>();
+	// public var onDisplayOrientationChange = new Event<Int->Orientation->Void>();
 
 	/**
 		Dispatched when the orientation of the device has changed. Typically,
@@ -71,7 +71,7 @@ class Application extends Module
 		display orientation is locked to portrait or landscape, the display and
 		device orientations may be different.
 	**/
-	public var onDeviceOrientationChange = new Event<Orientation->Void>();
+	// public var onDeviceOrientationChange = new Event<Orientation->Void>();
 
 	/**
 		The Preloader for the current Application
@@ -662,10 +662,10 @@ class Application extends Module
 		return __windows;
 	}
 
-	@:noCompletion private function get_deviceOrientation():Orientation
+	/*@:noCompletion private function get_deviceOrientation():Orientation
 	{
 		return __backend.getDeviceOrientation();
-	}
+	}*/
 }
 
 #if air
