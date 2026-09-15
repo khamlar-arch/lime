@@ -4,10 +4,10 @@
 
 #import <sys/utsname.h>
 #include <system/System.h>
-#include <system/OrientationEvent.h>
+// #include <system/OrientationEvent.h>
 
 
-#ifdef IPHONE
+/* #ifdef IPHONE
 @interface OrientationObserver: NSObject
 - (id) init;
 - (void) dealloc;
@@ -105,11 +105,11 @@
 
 }
 @end
-#endif
+#endif */
 
 namespace lime {
 
-	OrientationObserver* orientationObserver;
+	// OrientationObserver* orientationObserver;
 
 	void System::GCEnterBlocking () {
 
@@ -186,7 +186,7 @@ namespace lime {
 	}
 
 
-	int System::GetDeviceOrientation () {
+	/* int System::GetDeviceOrientation () {
 
 		UIDevice * device = [UIDevice currentDevice];
 
@@ -221,7 +221,7 @@ namespace lime {
 
 		return orientation;
 
-	}
+	}*/
 
 
 	std::wstring* System::GetDeviceModel () {
@@ -273,7 +273,7 @@ namespace lime {
 	}
 
 
-	void System::EnableDeviceOrientationChange (bool enable) {
+	/*void System::EnableDeviceOrientationChange (bool enable) {
 
 		#ifdef IPHONE
 		if (enable && !orientationObserver)
@@ -293,7 +293,7 @@ namespace lime {
 		}
 		#endif
 
-	}
+	}*/
 
 
 	void System::OpenFile (const char* path) {
