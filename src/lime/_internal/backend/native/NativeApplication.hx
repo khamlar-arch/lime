@@ -12,7 +12,7 @@ import lime.system.Clipboard;
 import lime.system.Display;
 import lime.system.DisplayMode;
 import lime.system.JNI;
-import lime.system.Orientation;
+// import lime.system.Orientation;
 import lime.system.Sensor;
 import lime.system.SensorType;
 import lime.system.System;
@@ -50,7 +50,7 @@ class NativeApplication
 	private var gamepadEventInfo = new GamepadEventInfo();
 	private var joystickEventInfo = new JoystickEventInfo();
 	private var keyEventInfo = new KeyEventInfo();
-	private var orientationEventInfo = new OrientationEventInfo();
+	// private var orientationEventInfo = new OrientationEventInfo();
 	private var mouseEventInfo = new MouseEventInfo();
 	private var renderEventInfo = new RenderEventInfo(RENDER);
 	private var sensorEventInfo = new SensorEventInfo();
@@ -61,9 +61,9 @@ class NativeApplication
 
 	public var handle:Dynamic;
 
-	#if android
+	/*#if android
 	private var deviceOrientationListener:OrientationChangeListener;
-	#end
+	#end*/
 
 	private var pauseTimer:Int;
 	private var parent:Application;
@@ -88,7 +88,7 @@ class NativeApplication
 		Sensor.registerSensor(SensorType.ACCELEROMETER, 0);
 		#end
 
-		#if android
+		/*#if android
 		var setDeviceOrientationListener = JNI.createStaticMethod("org/haxe/lime/GameActivity", "setDeviceOrientationListener",
 			"(Lorg/haxe/lime/HaxeObject;)V");
 		deviceOrientationListener = new OrientationChangeListener(handleJNIOrientationEvent);
@@ -97,7 +97,7 @@ class NativeApplication
 
 		#if (!macro && lime_cffi)
 		handle = NativeCFFI.lime_application_create();
-		#end
+		#end*/
 	}
 
 	private function advanceTimer():Void
@@ -130,9 +130,9 @@ class NativeApplication
 		NativeCFFI.lime_text_event_manager_register(handleTextEvent, textEventInfo);
 		NativeCFFI.lime_touch_event_manager_register(handleTouchEvent, touchEventInfo);
 		NativeCFFI.lime_window_event_manager_register(handleWindowEvent, windowEventInfo);
-		#if (ios || android)
+		/*#if (ios || android)
 		NativeCFFI.lime_orientation_event_manager_register(handleOrientationEvent, orientationEventInfo);
-		#end
+		#end*/
 		#if (ios || android || tvos)
 		NativeCFFI.lime_sensor_event_manager_register(handleSensorEvent, sensorEventInfo);
 		#end
@@ -381,7 +381,7 @@ class NativeApplication
 		}
 	}
 
-	private function handleOrientationEvent():Void
+	/*private function handleOrientationEvent():Void
 	{
 		var orientation:Orientation = cast orientationEventInfo.orientation;
 		var display = orientationEventInfo.display;
@@ -400,7 +400,7 @@ class NativeApplication
 		var orientation:Orientation = cast newOrientation;
 		parent.onDeviceOrientationChange.dispatch(orientation);
 	}
-	#end
+	#end*/
 
 	private function handleRenderEvent():Void
 	{
@@ -1028,8 +1028,8 @@ class NativeApplication
 	var WINDOW_SHOW = 13;
 	var WINDOW_HIDE = 14;
 }
-
-@:keep /*private*/ class OrientationEventInfo
+/*
+@:keep class OrientationEventInfo
 {
 	public var orientation:Int;
 	public var display:Int;
@@ -1073,3 +1073,4 @@ private class OrientationChangeListener #if !macro implements JNISafety #end
 	}
 }
 #end
+*/
