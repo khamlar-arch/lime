@@ -246,7 +246,7 @@ namespace lime {
 	}
 	#endif
 
-	int System::GetDeviceOrientation () {
+	/* int System::GetDeviceOrientation () {
 
 		return 0; // SDL_ORIENTATION_UNKNOWN
 
@@ -254,7 +254,7 @@ namespace lime {
 
 	void System::EnableDeviceOrientationChange (bool enable) {
 
-	}
+	}*/
 
 }
 
