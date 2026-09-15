@@ -239,7 +239,7 @@ class System
 			display.name = displayInfo.name;
 			#end
 			display.bounds = new Rectangle(displayInfo.bounds.x, displayInfo.bounds.y, displayInfo.bounds.width, displayInfo.bounds.height);
-			display.orientation = displayInfo.orientation;
+			// display.orientation = displayInfo.orientation;
 
 			#if android
 			var getDisplaySafeArea = JNI.createStaticMethod("org/haxe/lime/GameActivity", "getDisplaySafeAreaInsets", "()[I");
